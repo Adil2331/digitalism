@@ -1,0 +1,15 @@
+.wrapper {
+    // flex gap-[100px] w-full justify-center
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    justify-content: center;
+}
+
+@media(max-width: 650px) {
+    .wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+    }
+}

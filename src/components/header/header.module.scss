@@ -1,0 +1,30 @@
+.menu {
+	display: flex;
+	gap: 20px;
+}
+
+.menu_toggle {
+	cursor: pointer;
+	display: none;
+}
+
+.responsive_title {
+    font-size: 1.25rem; /* text-xl */
+}
+
+
+@media (max-width: 850px) {
+	.menu {
+		display: none;
+	}
+
+	.menu_toggle {
+		display: block;
+	}
+}
+
+@media (max-width: 600px) {
+    .responsive_title {
+        font-size: 1.125rem; /* text-lg */
+    }
+}

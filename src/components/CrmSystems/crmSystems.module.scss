@@ -1,0 +1,28 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+}
+
+.listItem {
+    background-color: #f4f7fb;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+@media(max-width: 1100px) {
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media(max-width: 550px) {
+    .listItem {
+        flex-direction: column;
+    }
+}
