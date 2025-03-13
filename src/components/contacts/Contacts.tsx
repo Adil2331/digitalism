@@ -38,9 +38,11 @@ const Contacts = () => {
 					заявку и мы свяжемся с вами!
 				</p>
 				<section className={styles.wrapper}>
-					<div className='flex flex-col gap-[10px]'>
-						<span className='text-xl'>+7 747 640-99-17</span>
-						<span className='text-xl'>example@example.ru</span>
+					<div className={styles.wrapperInner}>
+						<ul className='flex flex-col gap-[5px]'>	
+							<span className='text-xl'>+7 747 640-99-17</span>
+							<span className='text-xl'>example@example.ru</span>
+						</ul>
 						<ul className='flex gap-[10px]'>
 							<li>
 								<Link href='#'>

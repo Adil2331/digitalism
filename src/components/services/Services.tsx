@@ -2,7 +2,6 @@ import { Accordion, AccordionItem, AccordionTrigger } from '@/ui/Accordion'
 import { AccordionContent } from '@radix-ui/react-accordion'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from './services.module.scss'
 
 const Services = () => {
 	const CRM = [
@@ -155,11 +154,11 @@ const Services = () => {
 					ваши надежные партнеры.
 				</p>
 				<ul className='flex flex-col w-full items-center'></ul>
-				<Accordion type='multiple' className='max-w-[720px] w-full px-[10px]'>
+				<Accordion type='multiple' className='max-w-[720px] w-full px-[20px]'>
 					{Services.map((e, i) => (
 						<AccordionItem key={i} value={e.title}>
-							<AccordionTrigger className={styles.accordionItem}>
-								<li className='flex flex-col max-w-[700px] w-full border-b-1 py-[20px] gap-[5px] mr-[20px]'>
+							<AccordionTrigger className='border-b-1'>
+								<li className='flex flex-col max-w-[700px] w-full py-[20px] gap-[5px] mr-[20px]'>
 									<span className='text-[12px] self-start'>{e.subtitle}</span>
 									<div className='flex justify-between'>
 										<p className='font-semibold'>{e.title}</p>
@@ -168,7 +167,7 @@ const Services = () => {
 								</li>
 							</AccordionTrigger>
 							<AccordionContent>
-								<ul className='list-decimal list-inside flex flex-col gap-[4px]'>
+								<ul className='list-decimal list-inside flex flex-col gap-[4px] pt-[10px]'>
 									{e.services?.map((el, index) => (
 										<li key={index}>{`${index + 1}. ${el}`}</li>
 									))}

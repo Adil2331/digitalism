@@ -19,7 +19,7 @@ const Main = () => {
 			</p>
 			<Link
 				href='#'
-				className='font-semibold py-[20px] px-[40px] bg-[#6699CC] rounded-4xl '
+				className='font-semibold py-[10px] px-[40px] bg-[#6699CC] rounded-4xl '
 			>
 				<p className='text-white'>Узнать больше</p>
 			</Link>
@@ -28,7 +28,7 @@ const Main = () => {
 				width={1400}
 				height={300}
 				src={image}
-				className='w-[100%] rounded-[25px]'
+				className='w-[100%] min-h-[200px] rounded-[25px]'
 			/>
 		</section>
 	)
