@@ -1,0 +1,17 @@
+.container {
+	display: flex;
+	gap: 100px;
+	align-items: center;
+	padding-top: 50px;
+}
+
+@media(max-width:800px) {
+	.container {
+		flex-direction: column-reverse;
+		gap: 20px;
+		justify-content: center;
+		h1 {
+			text-align: center;
+		}
+	}
+}

@@ -29,6 +29,11 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 						</Link>
 					</li>
 					<li>
+					<Link href='/#values' className='font-semibold cursor-pointer'>
+										Ценности
+									</Link>
+					</li>
+					<li>
 						<Link href='/#products' className='font-semibold cursor-pointer'>
 							Продукты
 						</Link>
@@ -73,6 +78,13 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 								<SheetClose asChild>
 									<Link href='/#main' className='font-semibold cursor-pointer'>
 										Главная
+									</Link>
+								</SheetClose>
+							</li>
+							<li>
+								<SheetClose asChild>
+									<Link href='/#values' className='font-semibold cursor-pointer'>
+										Ценности
 									</Link>
 								</SheetClose>
 							</li>

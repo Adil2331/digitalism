@@ -1,7 +1,5 @@
 import { Accordion, AccordionItem, AccordionTrigger } from '@/ui/Accordion'
 import { AccordionContent } from '@radix-ui/react-accordion'
-import Image from 'next/image'
-import Link from 'next/link'
 
 const Services = () => {
 	const CRM = [
@@ -43,6 +41,7 @@ const Services = () => {
 			subtitle: 'Базовый пакет',
 			title: 'Быстрый старт',
 			price: '95 000 тг',
+			time: '3 дня',
 			services: [
 				'Регистрация портала (Установка логотипа, занесение информации о компании, закрепление домена)',
 				'Приглашение сотрудников и распределение их в структуре (до 10)',
@@ -61,6 +60,7 @@ const Services = () => {
 			subtitle: 'Продвинутый пакет',
 			title: 'Автоматизация',
 			price: '215 000 тг',
+			time: '7 дней',
 			services: [
 				'Регистрация портала (Установка логотипа, занесение информации о компании, закрепление домена)',
 				'Приглашение сотрудников и распределение их в структуре (до 10)',
@@ -87,6 +87,7 @@ const Services = () => {
 			subtitle: 'Полный пакет',
 			title: 'Максимум',
 			price: '425 000 тг',
+			time: '14 дней',
 			services: [
 				'Регистрация портала (Установка логотипа, занесение информации о компании, закрепление домена)',
 				'Приглашение сотрудников и распределение их в структуре (до 10)',
@@ -120,12 +121,24 @@ const Services = () => {
 			subtitle: 'Дополнительные пакет',
 			title: 'Экспересс-лендинг',
 			price: '55 000 тг',
+			services: [
+				'Регистрация домена и хостинга',
+				'Уникальный дизайн сайта (не шаблон)',
+				'Копирайтинг и подбор фотографий',
+				'Мобильная версия',
+				'Форма обратной связи',
+				'Карта проезда',
+				'Регистрация в поисковых системах Google и Yandex',
+				'Установка SSL сертификата для защиты сайта HTTPS',
+				'Базовая SEO оптимизация',
+				'Техническая поддержка/обслуживание сайта 1 месяц'
+			]
 		},
 	]
 
 	return (
 		<section className='py-[50px]'>
-			<section className='bg-[#f6f6f6] p-[50px] rounded-[25px]' id='services'>
+			{/* <section className='bg-[#f6f6f6] p-[50px] rounded-[25px]' id='services'>
 				<h1 className='text-2xl font-bold text-center mb-[50px]'>Услуги</h1>
 				<ul className='flex flex-wrap justify-between gap-[50]'>
 					{CRM.map((e, i) => (
@@ -139,11 +152,11 @@ const Services = () => {
 						</li>
 					))}
 				</ul>
-			</section>
+			</section> */}
 
 			<section
 				className='flex flex-col gap-[20px] items-center py-[50] my-[50px] bg-[#f4f7fb] rounded-[25px]'
-				id='price'
+				id='services'
 			>
 				<h1 className='text-2xl font-bold text-center'>
 					Экспертные услуги CRM для плавного пакетного внедрения
@@ -163,7 +176,11 @@ const Services = () => {
 									<div className='flex justify-between'>
 										<p className='font-semibold'>{e.title}</p>
 										<p className='font-semibold'>{e.price}</p>
+										
 									</div>
+									{e.time ?<span className='text-[12px] self-start'>
+									{e.time}
+									</span> : null}
 								</li>
 							</AccordionTrigger>
 							<AccordionContent>
