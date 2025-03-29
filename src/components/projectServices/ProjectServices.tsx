@@ -29,7 +29,7 @@ const ProjectServices = () => {
 				Посмотрите наши ценовые планы и выберите подходящий пакет, который
 				соответствует вашему бюджету и потребностям.
 			</p>
-			<ul className='w-full flex flex-wrap gap-[50px] justify-center mt-[20px]'>
+			<ul className='w-full flex flex-wrap  gap-[50px] xl:justify-between max-xl:justify-center mt-[20px]'>
 				{Data.map((e, i) => (
 					<li key={i} className='max-w-[360px] flex flex-col gap-[10px]'>
 						<Image
