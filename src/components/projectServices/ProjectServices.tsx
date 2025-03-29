@@ -1,18 +1,20 @@
 import Image from 'next/image'
-import image from '../../../public/assets/images/customer-relationshi.jpg'
 
 const Data = [
 	{
 		title: 'Проектное внедрение Корпоративного портала',
 		text: 'Проектный подход внедрения корпоративного портала при крупных корпоративных внедрениях',
+		img:'/assets/images/bg1.png'
 	},
 	{
 		title: 'Разработка сайта на CMS',
 		text: 'Услуги по разработке сайта любой сложности на готовых платформах, такие как Битрикс: Управление Сайтом или Tilda',
+		img:'/assets/images/bg2.png'
 	},
 	{
 		title: 'Разработка сайта',
 		text: 'Услуги по разработке сайта любой сложности с нуля',
+		img:'/assets/images/bg4.png'
 	},
 ]
 
@@ -31,14 +33,14 @@ const ProjectServices = () => {
 				{Data.map((e, i) => (
 					<li key={i} className='max-w-[360px] flex flex-col gap-[10px]'>
 						<Image
-							src={image}
+							src={e.img}
 							alt='image'
 							width={360}
 							height={240}
 							className='rounded-[25px] h-[240px]'
 						/>
-						<h3 className='font-semibold'>{e.title}</h3>
-						<p>{e.text}</p>
+						<h3 className='font-semibold text-center'>{e.title}</h3>
+						<p className='text-center'>{e.text}</p>
 					</li>
 				))}
 			</ul>
