@@ -20,7 +20,7 @@ const Data = [
 
 const ProjectServices = () => {
 	return (
-		<section className='flex flex-col gap-[20px] items-center py-[50px]'>
+		<section className='flex flex-col gap-[20px] items-center py-[50px]' id='projectServices'>
 			<h1 className='text-2xl font-bold text-center'>
 				Проектные услуги во внедрении и разработке программного обеспечения
 			</h1>

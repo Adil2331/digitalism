@@ -34,13 +34,18 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 									</Link>
 					</li>
 					<li>
-						<Link href='/#products' className='font-semibold cursor-pointer'>
-							Продукты
+						<Link href='/#services' className='font-semibold cursor-pointer'>
+							Услуги
 						</Link>
 					</li>
 					<li>
-						<Link href='/#services' className='font-semibold cursor-pointer'>
-							Услуги
+						<Link href='/#projectServices' className='font-semibold cursor-pointer'>
+						Проектные услуги
+						</Link>
+					</li>
+					<li>
+						<Link href='/#products' className='font-semibold cursor-pointer'>
+							Продукты
 						</Link>
 					</li>
 					<li>
@@ -71,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 						)}
 					>
 						<SheetHeader>
-							<SheetTitle className='text-white'>Меню</SheetTitle>
+							<SheetTitle className='text-white mb-[20px]'>Меню</SheetTitle>
 						</SheetHeader>
 						<ul className='flex flex-col gap-[20px]'>
 							<li>
@@ -90,15 +95,22 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 							</li>
 							<li>
 								<SheetClose asChild>
-									<Link href='/#products' className='font-semibold cursor-pointer'>
-										Продукты
-									</Link>
+								<Link href='/#projectServices' className='font-semibold cursor-pointer'>
+									Проектные услуги
+								</Link>
 								</SheetClose>
 							</li>
 							<li>
 								<SheetClose asChild>
 									<Link href='/#services' className='font-semibold cursor-pointer'>
 										Услуги
+									</Link>
+								</SheetClose>
+							</li>
+							<li>
+								<SheetClose asChild>
+									<Link href='/#products' className='font-semibold cursor-pointer'>
+										Продукты
 									</Link>
 								</SheetClose>
 							</li>
