@@ -1,28 +1,36 @@
+'use client'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/ui/Dialog'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useState } from 'react'
 import image from '../../../public/assets/images/customer-relationshi.jpg'
+import { CustomContacts } from '../CustomContacts/CustomContacts'
 
 const Main = () => {
+	const [open, setOpen] = useState(false)
+
 	return (
-		<section
-			className=' py-[50px] flex gap-[30px] flex-col items-center'
-			id='main'
-		>
+		<section className='py-[50px] flex gap-[30px] flex-col items-center' id='main'>
 			<h1 className='text-2xl font-bold text-center'>
 				Раскройте потенциал вашего бизнеса с помощью CRM
 			</h1>
 			<p className='text-center max-w-[700px]'>
-				Оптимизируйте работу, улучшайте отношения с клиентами и увеличивайте
-				продажи с помощью мощных CRM-систем. Мы предлагаем ведущие CRM-системы,
-				такие как Bitrix24 и AmoCRM, которые подбираются под ваши индивидуальные
-				потребности.
+				Оптимизируйте работу, улучшайте отношения с клиентами и увеличивайте продажи с помощью мощных CRM-систем.
 			</p>
-			<Link
-				href='#'
-				className='font-semibold py-[10px] px-[40px] bg-[#6699CC] rounded-4xl '
-			>
-				<p className='text-white'>Узнать больше</p>
-			</Link>
+
+			<Dialog open={open} onOpenChange={setOpen}>
+				<DialogTrigger asChild>
+					<button className='font-semibold py-[10px] px-[40px] bg-[#6699CC] rounded-4xl text-white'>
+						Узнать больше
+					</button>
+				</DialogTrigger>
+				<DialogContent className='max-h-[90vh] overflow-y-auto py-[50px]'>
+					<DialogHeader>
+						<DialogTitle>Свяжитесь с нами сегодня</DialogTitle>
+					</DialogHeader>
+					<CustomContacts onSuccess={() => setOpen(false)} />
+				</DialogContent>
+			</Dialog>
+
 			<Image
 				alt='image'
 				width={1400}

@@ -3,7 +3,7 @@ import styles from './values.module.scss'
 const Values = () => {
 	return (
 		<section className={styles.container} id='values'>
-		<Image src={'/assets/images/bitrix24.webp'} alt='bitrix24' width={300} height={300}/>
+		<Image src={'/assets/images/OurValues.png'} alt='bitrix24' width={400} height={400} className='rounded-[25px]'/>
 		<div>
 			<h1 className='text-2xl font-bold mb-[20px]'>Наши ценности</h1>
 			<ul className='flex flex-col gap-[10px]'>

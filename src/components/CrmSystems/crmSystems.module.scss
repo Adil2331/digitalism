@@ -1,28 +1,44 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
 
 }
 
 .listItem {
-    background-color: #f4f7fb;
-    display: flex;
-    gap: 20px;
-    padding: 30px;
-    border-radius: 25px;
+	background-color: #f4f7fb;
+	padding: 30px;
+	border-radius: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	// 🔑 Делаем элемент квадратным
+	aspect-ratio: 1 / 1;
+
+	// Опционально ограничим размер
+	width: 100%;
+
 }
 
 @media(max-width: 1100px) {
     .list {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        // display: flex;
+        // flex-direction: column;
+        gap: 20px;
     }
 }
 
-@media(max-width: 550px) {
-    .listItem {
-        flex-direction: column;
+@media(max-width: 750px) {
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+         gap: 25px;
     }
 }
+
+// @media(max-width: 550px) {
+//     .listItem {
+//         flex-direction: column;
+//     }
+// }

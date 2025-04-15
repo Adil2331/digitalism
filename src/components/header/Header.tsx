@@ -24,6 +24,11 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 			<main className='flex justify-between py-[35px] border-b-[1px] items-center'>
 				<ul className={styles.menu}>
 					<li>
+						{/* <Link href='/#main' className='font-semibold cursor-pointer'> */}
+							<Image alt='logo' src={'/assets/svg/tg.svg'} width={35} height={35}/>
+						{/* </Link> */}
+					</li>
+					<li>
 						<Link href='/#main' className='font-semibold cursor-pointer'>
 							Главная
 						</Link>
@@ -35,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 					</li>
 					<li>
 						<Link href='/#services' className='font-semibold cursor-pointer'>
-							Услуги
+						Пакетные услуги
 						</Link>
 					</li>
 					<li>

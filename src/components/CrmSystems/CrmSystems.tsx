@@ -1,5 +1,7 @@
+'use client'
+
 import Image from 'next/image'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import styles from './crmSystems.module.scss'
 
 const CrmSystems = () => {
@@ -29,7 +31,7 @@ const CrmSystems = () => {
 			text: 'Узнайте больше о наших предложениях по лицензированию OnlinePBX и получите консультацию.',
 		},
 		{
-			image: '/assets/images/crm5.png',
+			image: '/assets/svg/Ringostat.svg',
 			id: 5,
 			title: 'Ringostat',
 			text: 'Узнайте больше о наших предложениях по лицензированию Ringostat и получите консультацию.',
@@ -53,13 +55,13 @@ const CrmSystems = () => {
 			text: 'Узнайте больше о наших предложениях по лицензированию Мой Склад и получите консультацию.',
 		},
 		{
-			image: '/assets/images/crm9.png',
+			image: '/assets/images/flatris.png',
 			id: 9,
 			title: 'Flatris',
 			text: 'Узнайте больше о наших предложениях по лицензированию Flatris и получите консультацию.',
 		},
 		{
-			image: '/assets/images/crm10.png',
+			image: '/assets/svg/Prositbase.svg',
 			id: 10,
 			title: 'ProfitBase',
 			text: 'Узнайте больше о наших предложениях по лицензированию ProfitBase и получите консультацию.',
@@ -75,6 +77,30 @@ const CrmSystems = () => {
 			id: 12,
 			title: 'I2CRM',
 			text: 'Узнайте больше о наших предложениях по лицензированию I2CRM и получите консультацию.',
+		},
+		{
+			image: '/assets/images/Albat.svg',
+			id: 13,
+			title: 'Albat',
+			text: '',
+		},
+		{
+			image: '/assets/images/chatapp.svg',
+			id: 14,
+			title: 'chatapp',
+			text: '',
+		},
+		{
+			image: '/assets/images/roistat.svg',
+			id: 15,
+			title: 'roistat',
+			text: '',
+		},
+		{
+			image: '/assets/images/twin.svg',
+			id: 16,
+			title: 'twin',
+			text: '',
 		},
 		// {
 		// 	image: '/assets/images/crm13.png',
@@ -102,6 +128,8 @@ const CrmSystems = () => {
 		// },
 	]
 
+	const router = useRouter()
+
 	return (
 		<section
 			className='flex flex-col py-[50px] gap-[30px] items-center'
@@ -115,6 +143,7 @@ const CrmSystems = () => {
 			<ul className={styles.list}>
 				{Data.map((e, i) => (
 					<li
+					onClick={()=> router.push(`/CrmSystems/${e.id}`)}
 						className={styles.listItem}
 						key={i}
 					>
@@ -123,10 +152,10 @@ const CrmSystems = () => {
 							src={e.image}
 							width={200}
 							height={200}
-							className='cover'
+							className='cover '
 							style={{ objectFit: 'contain' }}
 						/>
-						<div className='flex flex-col gap-[15px]'>
+						{/* <div className='flex flex-col gap-[15px]'>
 							<h3 className='font-semibold'>{e.title}</h3>
 							<p>{e.text}</p>
 							<Link
@@ -135,7 +164,7 @@ const CrmSystems = () => {
 							>
 								<p className='text-white'>Подробнее</p>
 							</Link>
-						</div>
+						</div> */}
 					</li>
 				))}
 			</ul>
