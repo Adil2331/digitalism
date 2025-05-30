@@ -21,39 +21,57 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ children }) => {
 	return (
 		<section className='max-w-[1440px] px-[20px] mx-auto'>
-			<main className='flex justify-between py-[35px] border-b-[1px] items-center'>
+			<main
+				className={`${styles.stickyMenu} flex justify-between py-[35px] border-b-[1px] items-center`}
+			>
 				<ul className={styles.menu}>
-					<li>
+					<li className={styles.menu_item}>
 						{/* <Link href='/#main' className='font-semibold cursor-pointer'> */}
-							<Image alt='logo' src={'/assets/svg/tg.svg'} width={35} height={35}/>
+						<Image
+							alt='logo'
+							src={'/assets/svg/tg.svg'}
+							width={35}
+							height={35}
+						/>
 						{/* </Link> */}
 					</li>
-					<li>
+					<li className={styles.menu_item}>
 						<Link href='/#main' className='font-semibold cursor-pointer'>
 							Главная
 						</Link>
 					</li>
-					<li>
-					<Link href='/#values' className='font-semibold cursor-pointer'>
-										Ценности
-									</Link>
+					<li className={styles.menu_item}>
+						<Link href='/#values' className='font-semibold cursor-pointer'>
+							Ценности
+						</Link>
 					</li>
-					<li>
+					<li className={styles.menu_item}>
 						<Link href='/#services' className='font-semibold cursor-pointer'>
-						Пакетные услуги
+							Пакетные услуги
 						</Link>
 					</li>
-					<li>
-						<Link href='/#projectServices' className='font-semibold cursor-pointer'>
-						Проектные услуги
+					<li className={styles.menu_item}>
+						<Link
+							href='/#projectServices'
+							className='font-semibold cursor-pointer'
+						>
+							Проектные услуги
 						</Link>
 					</li>
-					<li>
+					<li className={styles.menu_item}>
 						<Link href='/#products' className='font-semibold cursor-pointer'>
 							Продукты
 						</Link>
 					</li>
-					<li>
+					<li className={styles.menu_item}>
+						<Link
+							href='/#industrySolutions'
+							className='font-semibold cursor-pointer'
+						>
+							Отраслевые решения
+						</Link>
+					</li>
+					<li className={styles.menu_item}>
 						<Link href='/#contacts' className='font-semibold cursor-pointer'>
 							Контакты
 						</Link>
@@ -93,35 +111,50 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 							</li>
 							<li>
 								<SheetClose asChild>
-									<Link href='/#values' className='font-semibold cursor-pointer'>
+									<Link
+										href='/#values'
+										className='font-semibold cursor-pointer'
+									>
 										Ценности
 									</Link>
 								</SheetClose>
 							</li>
 							<li>
 								<SheetClose asChild>
-								<Link href='/#projectServices' className='font-semibold cursor-pointer'>
-									Проектные услуги
-								</Link>
+									<Link
+										href='/#projectServices'
+										className='font-semibold cursor-pointer'
+									>
+										Проектные услуги
+									</Link>
 								</SheetClose>
 							</li>
 							<li>
 								<SheetClose asChild>
-									<Link href='/#services' className='font-semibold cursor-pointer'>
+									<Link
+										href='/#services'
+										className='font-semibold cursor-pointer'
+									>
 										Услуги
 									</Link>
 								</SheetClose>
 							</li>
 							<li>
 								<SheetClose asChild>
-									<Link href='/#products' className='font-semibold cursor-pointer'>
+									<Link
+										href='/#products'
+										className='font-semibold cursor-pointer'
+									>
 										Продукты
 									</Link>
 								</SheetClose>
 							</li>
 							<li>
 								<SheetClose asChild>
-									<Link href='/#contacts' className='font-semibold cursor-pointer'>
+									<Link
+										href='/#contacts'
+										className='font-semibold cursor-pointer'
+									>
 										Контакты
 									</Link>
 								</SheetClose>
@@ -129,7 +162,9 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 						</ul>
 					</SheetContent>
 				</Sheet>
-				<h2 className={styles.responsive_title}>Продажа и внедрение CRM-систем</h2>
+				<h2 className={styles.responsive_title}>
+					Продажа и внедрение CRM-систем
+				</h2>
 			</main>
 
 			{children}

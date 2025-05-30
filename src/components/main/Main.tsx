@@ -1,5 +1,11 @@
 'use client'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/ui/Dialog'
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from '@/ui/Dialog'
 import Image from 'next/image'
 import { useState } from 'react'
 import image from '../../../public/assets/images/customer-relationshi.jpg'
@@ -9,12 +15,16 @@ const Main = () => {
 	const [open, setOpen] = useState(false)
 
 	return (
-		<section className='py-[50px] flex gap-[30px] flex-col items-center' id='main'>
+		<section
+			id='main'
+			className='py-[50px] flex gap-[30px] flex-col items-center'
+		>
 			<h1 className='text-2xl font-bold text-center'>
 				Раскройте потенциал вашего бизнеса с помощью CRM
 			</h1>
 			<p className='text-center max-w-[700px]'>
-				Оптимизируйте работу, улучшайте отношения с клиентами и увеличивайте продажи с помощью мощных CRM-систем.
+				Оптимизируйте работу, улучшайте отношения с клиентами и увеличивайте
+				продажи с помощью мощных CRM-систем.
 			</p>
 
 			<Dialog open={open} onOpenChange={setOpen}>
