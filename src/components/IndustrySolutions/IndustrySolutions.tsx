@@ -1,6 +1,6 @@
 'use client'
 
-import { IndustrySolutionsData } from '@/data/const'
+import { IndustrySolutionsData } from '@/data/IndustrySolutionsData'
 import styles from './IndustrySolutions.module.scss'
 
 const IndustrySolutions = () => {

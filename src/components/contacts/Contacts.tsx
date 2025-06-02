@@ -13,7 +13,8 @@ import styles from './contacts.module.scss'
 const contactSchema = z.object({
 	email: z.string().optional(),
 	name: z.string().min(2, 'Имя должно содержать минимум 2 символа'),
-	phone: z.string()
+	phone: z
+		.string()
 		.min(10, 'Введите номер телефона')
 		.regex(/^\+?\d{10,15}$/, 'Введите корректный номер телефона'),
 	comment: z.string().optional(),
@@ -37,57 +38,72 @@ const Contacts = () => {
 		formState: { errors },
 		reset,
 	} = methods
-	
+
 	const onSubmit = async (data: IContactInput) => {
 		try {
 			const response = await fetch('/api/telegram', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data),
-			});
-	
-			const result = await response.json(); 
+			})
+
+			const result = await response.json()
 			if (response.ok) {
-				toast.success('Сообщение успешно отправлено',);
-				setTimeout(() => reset(), 500);
+				toast.success('Сообщение успешно отправлено')
+				setTimeout(() => reset(), 500)
 			} else {
-				toast.error(`Ошибка: ${result.message || 'Неизвестная ошибка'}`);
+				toast.error(`Ошибка: ${result.message || 'Неизвестная ошибка'}`)
 			}
 		} catch (error) {
-			toast.error('Ошибка при отправке');
+			toast.error('Ошибка при отправке')
 		}
-	};
-	
+	}
+
 	return (
 		<FormProvider {...methods}>
-			<section
-				className='flex flex-col gap-[30px] items-center py-[50px] border-b-1 mb-[100px]'
-				id='contacts'
-			>
-				<h1 className='text-2xl font-bold text-center'>Свяжитесь с нами сегодня</h1>
+			<section className={styles.container} id='contacts'>
+				<h1 className='text-2xl font-bold text-center'>
+					Свяжитесь с нами сегодня
+				</h1>
 				<p className='max-w-[700px] text-center'>
-					Не нашли нужную информацию? Нужна помощь с выбором продукта? Оставьте заявку, и мы свяжемся с вами!
+					Не нашли нужную информацию? Нужна помощь с выбором продукта? Оставьте
+					заявку, и мы свяжемся с вами!
 				</p>
 				<section className={styles.wrapper}>
 					<div className={styles.wrapperInner}>
-						<ul className='flex flex-col gap-[5px]'>	
+						<ul className='flex flex-col gap-[5px]'>
 							<span className='text-xl'>+7 747 640-99-17</span>
 							<span className='text-xl'>example@example.ru</span>
 						</ul>
 						<ul className='flex gap-[10px]'>
 							<li>
 								<Link href='#'>
-									<Image src='/assets/svg/tw.svg' alt='tw' width={30} height={30} />
+									<Image
+										src='/assets/svg/tw.svg'
+										alt='tw'
+										width={30}
+										height={30}
+									/>
 								</Link>
 							</li>
 							<li>
 								<Link href='#'>
-									<Image src='/assets/svg/tg.svg' alt='tg' width={30} height={30} />
+									<Image
+										src='/assets/svg/tg.svg'
+										alt='tg'
+										width={30}
+										height={30}
+									/>
 								</Link>
 							</li>
 							<li>
 								<Link href='#'>
-									<Image src='/assets/svg/vk.svg' alt='vk' width={30} height={30} />
+									<Image
+										src='/assets/svg/vk.svg'
+										alt='vk'
+										width={30}
+										height={30}
+									/>
 								</Link>
 							</li>
 						</ul>
@@ -103,7 +119,9 @@ const Contacts = () => {
 									<FormItem>
 										<FormControl>
 											<Input
-												className={`h-[70px] rounded-none border-[#c7c7c7] ${errors.email ? 'border-red-500' : ''}`}
+												className={`h-[70px] rounded-none border-[#c7c7c7] ${
+													errors.email ? 'border-red-500' : ''
+												}`}
 												type='email'
 												placeholder='Ваш электронный адрес'
 												{...field}
@@ -126,7 +144,9 @@ const Contacts = () => {
 									<FormItem>
 										<FormControl>
 											<Input
-												className={`h-[70px] rounded-none border-[#c7c7c7] ${errors.name ? 'border-red-500' : ''}`}
+												className={`h-[70px] rounded-none border-[#c7c7c7] ${
+													errors.name ? 'border-red-500' : ''
+												}`}
 												type='text'
 												placeholder='Ваше полное имя'
 												{...field}
@@ -148,7 +168,9 @@ const Contacts = () => {
 									<FormItem>
 										<FormControl>
 											<Input
-												className={`h-[70px] rounded-none border-[#c7c7c7] ${errors.name ? 'border-red-500' : ''}`}
+												className={`h-[70px] rounded-none border-[#c7c7c7] ${
+													errors.name ? 'border-red-500' : ''
+												}`}
 												type='number'
 												placeholder='Введите номер телефона'
 												{...field}
@@ -171,7 +193,9 @@ const Contacts = () => {
 									<FormItem>
 										<FormControl>
 											<Textarea
-												className={`h-[150px] rounded-none border-[#c7c7c7] ${errors.comment ? 'border-red-500' : ''}`}
+												className={`h-[150px] rounded-none border-[#c7c7c7] ${
+													errors.comment ? 'border-red-500' : ''
+												}`}
 												placeholder='Ваши комментарии'
 												{...field}
 											/>

@@ -1,10 +1,7 @@
-'use client'
-import { useParams } from 'next/navigation'
+import CrmSystem from '@/components/CrmSystems/CrmSystem'
 
 const Page = () => {
-	const { id } = useParams()
-	console.log(id, 'id')
-	return <div>Test</div>
+	return <CrmSystem />
 }
 
 export default Page
