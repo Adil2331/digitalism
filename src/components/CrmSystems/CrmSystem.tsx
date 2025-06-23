@@ -46,7 +46,7 @@ const CrmSystem = () => {
 					</div>
 				</div>
 			</div>
-			<Contacts />
+			<Contacts source={`CRM-система ${system?.title}`} />
 		</section>
 	)
 }

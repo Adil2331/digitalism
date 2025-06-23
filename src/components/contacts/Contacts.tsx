@@ -22,7 +22,7 @@ const contactSchema = z.object({
 
 type IContactInput = z.infer<typeof contactSchema>
 
-const Contacts = () => {
+const Contacts = ({ source }: { source: string }) => {
 	const methods = useForm<IContactInput>({
 		resolver: zodResolver(contactSchema),
 		defaultValues: {
@@ -41,10 +41,15 @@ const Contacts = () => {
 
 	const onSubmit = async (data: IContactInput) => {
 		try {
+			const fullData = {
+				...data,
+				source: source || '',
+			}
+
 			const response = await fetch('/api/telegram', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(data),
+				body: JSON.stringify(fullData),
 			})
 
 			const result = await response.json()

@@ -15,7 +15,7 @@ export default function Home() {
 			<ProjectServices />
 			<CrmSystems />
 			<IndustrySolutions />
-			<Contacts />
+			<Contacts source='Контакты' />
 		</div>
 	)
 }

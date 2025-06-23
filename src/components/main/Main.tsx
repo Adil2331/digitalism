@@ -37,7 +37,10 @@ const Main = () => {
 					<DialogHeader>
 						<DialogTitle>Свяжитесь с нами сегодня</DialogTitle>
 					</DialogHeader>
-					<CustomContacts onSuccess={() => setOpen(false)} />
+					<CustomContacts
+						onSuccess={() => setOpen(false)}
+						source='Узнать больше'
+					/>
 				</DialogContent>
 			</Dialog>
 
